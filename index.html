@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasm RSA Encryption</title>
+    <script type="module">
+        import init, { generate_keys, encrypt_message, decrypt_message } from './pkg/rust_wasm_encryption.js';
+
+        async function main() {
+            await init();
+
+            const usernameInput = document.getElementById('username');
+            const generateButton = document.getElementById('generate');
+            const publicKeyField = document.getElementById('public_key');
+
+            const messageInput = document.getElementById('message');
+            const encryptButton = document.getElementById('encrypt');
+            const encryptedField = document.getElementById('encrypted_message');
+            const decryptedField = document.getElementById('decrypted_message');
+
+            let username = '';
+            let encryptedMessage = '';
+
+            generateButton.addEventListener('click', () => {
+                username = usernameInput.value;
+                const publicKey = generate_keys();  // Call the updated Rust function
+                publicKeyField.textContent = `Public Key: ${publicKey}`;
+            });
+
+            encryptButton.addEventListener('click', () => {
+                const message = messageInput.value;
+                encryptedMessage = encrypt_message(message);  // Encrypt the message
+                encryptedField.textContent = `Encrypted: ${encryptedMessage}`;
+
+                const decryptedMessage = decrypt_message(encryptedMessage);  // Decrypt the message
+                decryptedField.textContent = `Decrypted: ${decryptedMessage}`;
+            });
+        }
+
+        main();
+    </script>
+</head>
+<body>
+    <h1>Wasm RSA Encryption</h1>
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" />
+        <button id="generate">Generate Keypair</button>
+    </div>
+    <div id="public_key"></div>
+    
+    <div>
+        <label for="message">Message:</label>
+        <input type="text" id="message" />
+        <button id="encrypt">Encrypt & Decrypt</button>
+    </div>
+    <div id="encrypted_message"></div>
+    <div id="decrypted_message"></div>
+</body>
+</html>
