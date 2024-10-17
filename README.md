@@ -1,1 +1,1 @@
-Small rust based web assembly sandgox for secured storing private application data
+Small rust based web assembly sandbox for secured storing private application data
