@@ -1,0 +1,15 @@
+[target.aarch64-linux-android]
+ar = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\aarch64-linux-android-ar.cmd"
+linker = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\aarch64-linux-android35-clang.cmd"
+
+[target.armv7-linux-androideabi]
+ar = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\arm-linux-androideabi-ar.cmd"
+linker = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\armv7a-linux-androideabi-clang.cmd"
+
+[target.i686-linux-android]
+ar = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\i686-linux-android-ar.cmd"
+linker = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\i686-linux-android-clang.cmd"
+
+[target.x86_64-linux-android]
+ar = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\x86_64-linux-android-ar.cmd"
+linker = "D:\\AndroidSDK\\ndk\\28.0.12433566\\toolchains\\llvm\\prebuilt\\windows-x86_64\\bin\\x86_64-linux-android-clang.cmd"
